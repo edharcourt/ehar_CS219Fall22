@@ -8,16 +8,18 @@ public class LogicalOperators {
 
         int coinflip = r.nextInt(2);
 
+        // Simulate tossing a coin
         if (coinflip == 0) {
             System.out.println("Heads");
         } else {
             System.out.println("Tails");
         }
 
-
+        // simulate rolling some dice
         int die1 = r.nextInt(6) + 1;
         int die2 = r.nextInt(6) + 1;
 
+        // check if we rolled two ones
         if (die1 == 1 && die2 == 1) {
             System.out.println("Snake eyes");
         }
@@ -49,5 +51,4 @@ public class LogicalOperators {
             System.out.println("Exactly one 1");
         }
     }
-
 }
