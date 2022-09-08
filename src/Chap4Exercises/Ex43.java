@@ -12,7 +12,6 @@ public class Ex43 {
         System.out.print("I ");
         baffle();
     }
-
     public static void baffle() {
         System.out.print("wug");
         ping();

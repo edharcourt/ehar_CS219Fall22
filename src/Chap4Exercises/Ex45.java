@@ -1,6 +1,7 @@
 package Chap4Exercises;
 
 public class Ex45 {
+
     public static void zoop(String fred, int bob) {
         System.out.println(fred);
         if (bob == 5) {
@@ -9,7 +10,6 @@ public class Ex45 {
             System.out.println("!");
         }
     }
-
     public static void main(String[] args) {
         int bizz = 5;
         int buzz = 2;

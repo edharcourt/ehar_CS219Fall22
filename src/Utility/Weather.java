@@ -15,7 +15,16 @@ public class Weather {
         Scanner kbd = new Scanner(System.in);
 
         System.out.print("Enter temperature in degrees F: ");
-        double temperature = kbd.nextDouble();
+        double temperature;
+
+        if (kbd.hasNextDouble()) {
+            temperature = kbd.nextDouble();
+        }
+        else {
+            System.out.printf("Error: please enter a decimal number. You entered \"%s\"",
+                               kbd.next());
+            return;  // exit main
+        }
 
         System.out.print("Enter wind velocity in MPH: ");
         double velocity = kbd.nextDouble();
@@ -23,7 +32,7 @@ public class Weather {
         System.out.printf("The windchill for %.1f degrees at %.1f MPH is %.2f\n",
                 temperature, velocity, windchill(temperature, velocity));
 
-        System.out.println("They said \"Don't\ndo\nit\"");
+        //System.out.println("They said \"Don't\ndo\nit\"");
     }
 
 }
