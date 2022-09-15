@@ -15,6 +15,7 @@ public class Weather {
         Scanner kbd = new Scanner(System.in);
 
         double temperature;
+
         System.out.print("Enter temperature in degrees F: ");
 
         // Make sure the user entered a number
@@ -27,9 +28,9 @@ public class Weather {
             return;  // exit main
         }
 
-        System.out.print("Enter wind velocity in MPH: ");
-
         double velocity;
+
+        System.out.print("Enter wind velocity in MPH: ");
         if (kbd.hasNextDouble()) {
             velocity = kbd.nextDouble();
         }
