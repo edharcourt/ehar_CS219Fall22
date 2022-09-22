@@ -1,6 +1,6 @@
 package LoopExercises;
 
-public class September15LoopExercises {
+public class LoopExercises {
 
     /*
      * Return the sum of the digits mod 10 of an integer. This is one example of
@@ -23,6 +23,14 @@ public class September15LoopExercises {
     }
 
     /*
+     * Append the checksum digit as the least significant digit
+     * to n and return it.
+     */
+    public static int appendChecksum(int n) {
+        return n * 10 + checksum(n);
+    }
+
+    /*
      * count7s  returns the number of times the digit 7 appears in
      * the parameter n.
      *
@@ -33,7 +41,15 @@ public class September15LoopExercises {
      * Question: Does the function work if n is negative?
      */
     public static int count7s(int n) {
-        return -1;  // just to shut up error message
+        int count = 0;
+
+        while (n > 0) {
+            if (n % 10 == 7)
+                count++;
+            n = n / 10;
+        }
+
+        return count;
     }
 
     /*
@@ -48,7 +64,15 @@ public class September15LoopExercises {
      *  sum3or5(1000) = 233168
      */
     public static int sum3or5(int n) {
-        return -1;  // shut up error message
+
+        int sum = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                 sum = sum + i;
+            }
+        }
+        return sum;
     }
 
     /*
@@ -56,6 +80,7 @@ public class September15LoopExercises {
      * and less than n. If no factors return -1.
      * Notice that this function uses longs and not ints.
      *
+     *  factor(25) =
      *  factor(59953793) == 7727
      *  factor(1531482031) == -1
      *  factor(7304692485435694493L) == -1;
@@ -188,6 +213,11 @@ public class September15LoopExercises {
      * Thoroughly test all of your functions above.
      */
     public static void main(String[] args) {
-         System.out.println(checksum(4298) == 3);
+        System.out.println(checksum(4298) == 3);
+        System.out.println(appendChecksum(91217) == 912170);
+        System.out.println(appendChecksum(91217) != 912179);  // negative test
+        System.out.println(count7s(971777327) == 5);
+        System.out.println(count7s(12345689) == 0);
+
     }
 }
