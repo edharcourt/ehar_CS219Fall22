@@ -1,6 +1,5 @@
 // By convention, class names are capitalized.
 public class HelloWorld {
-
     /*
         This is a multiline block comment.
         Another comment line.
