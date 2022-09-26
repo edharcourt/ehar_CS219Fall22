@@ -1,5 +1,7 @@
 package StringPlay;
 
+import java.util.Scanner;
+
 public class CharacterPlay {
 
     public static int countVowels(String s) {
@@ -24,11 +26,14 @@ public class CharacterPlay {
                        // assigned by the Unicode Consortium
         System.out.println(ch);
         System.out.println((int) ch);
-        System.out.println((char) ('a' + 1));
+        System.out.println("Hello" + ('a' + 1));
         System.out.println((char) 8749);
         System.out.println((char) 198);
         System.out.println((char) 960);
 
+        Scanner s  = new Scanner(System.in);
+        String input = s.next();
+        System.out.println("Input = " + input);
 
     }
 
