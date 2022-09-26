@@ -2,9 +2,9 @@ package HW1;
 
 public class Time {
     public static void main(String [] args) {
-        int hour = 16;
-        int minute = 43;
-        int sec = 25;
+        int hour = 15;
+        int minute = 23;
+        int sec = 20;
 
         // Seconds since midnight
         int ssm = hour * 60 * 60 + minute * 60 + sec;
