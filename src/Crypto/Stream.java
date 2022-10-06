@@ -15,7 +15,6 @@ public class Stream {
             char clear_char = clear.charAt(i);
             int clear_char_pos = clear_char - 'a';
             int shift = rng.nextInt(100);
-            System.out.println(shift);
             int cipher_char_pos = Math.floorMod(clear_char_pos + shift, alpha_length);
             char cipher_char = (char) (cipher_char_pos + 'a');
             cipher += cipher_char;
