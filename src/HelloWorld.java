@@ -15,7 +15,5 @@ public class HelloWorld {
         double avagadros = 6.022140857e23;  // Scientific notation
         double electron_mass = 9.1093837015e-31;
 
-        
-
     }
 }
