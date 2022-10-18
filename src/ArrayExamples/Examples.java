@@ -77,7 +77,7 @@ public class Examples {
         if (arr.length % 2 == 0)
             return (arr[arr.length / 2] + arr[arr.length/2 - 1]) / 2.0;
         else
-            return arr[arr.length / 2 + 1];
+            return arr[arr.length / 2];
     }
 
     public static void main(String [] args) {
