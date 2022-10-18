@@ -2,6 +2,7 @@ package ArrayExamples;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Examples {
 
@@ -66,6 +67,30 @@ public class Examples {
         return sum;
     }
 
+    /*
+         reverse the values in the array. Modify the actual array passed.
+     */
+    public static int [] reverse(int [] arr) {
+        for (int i = 0; i < arr.length/2; i++) {
+            int temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        return arr;
+    }
+
+    /*
+       Return the value of the largest element in the array
+     */
+    public static int max(final int [] arr) {
+        int curr_max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < arr.length; i++)
+            if (arr[i] > curr_max)
+                curr_max = arr[i];
+        return curr_max;
+    }
+
     // write a function that returns the average of an array of integers
     public static double avg(int [] arr) {
         return (double) sum(arr) / arr.length;
@@ -80,9 +105,36 @@ public class Examples {
             return arr[arr.length / 2 + 1];
     }
 
+    /*
+        Return the index of the item in arr. If not found -1
+     */
+    public static int indexOf(final String [] arr, String item) {
+
+        for (int i = 0; i < arr.length; i++)
+            //if (arr[i].equals(item))
+            if (arr[i].equals(item))
+                return i;
+        return -1;
+    }
+
     public static void main(String [] args) {
 
-        int [] nums = {4, 1, 0, 9, 2, 8};
+        String [] names = {"Harry", "Hermione", "Ron", "Draco"};
+
+        Scanner s = new Scanner(System.in);
+        String name = s.next();
+
+        System.out.println(indexOf(names, name) == 2);
+        System.out.println(indexOf(names, "Dumbledore") == -1);
+
+        int [] nums = {4, 1, 0, 9, 2};  // shorthand for the mess below
+        int [] nums2 = new int [] {1,2,3,4,5};
+
+        //reverse(nums);
+        // functions that return values can be composed
+        System.out.println(Arrays.equals(reverse(nums), new int [] {2,9,0,1,4}));
+        System.out.println(max(nums) == 9);
+
         int [] grades = new int[10];  // allocate space for 10 grades
 
         System.out.println(nums[2]);
