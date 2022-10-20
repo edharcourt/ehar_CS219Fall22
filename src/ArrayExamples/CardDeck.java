@@ -1,8 +1,21 @@
 package ArrayExamples;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class CardDeck {
+
+    public static String [] shuffle(String [] aos) {
+        Random rng = new Random();
+        for(int i = 0; i < aos.length - 1; i++) {
+            int r = rng.nextInt(i,aos.length);
+            String temp = aos[i];
+            aos[i] = aos[r];
+            aos[r] = temp;
+        }
+
+        return aos;
+    }
 
     public static String [] build_deck() {
         String [] suits = { "\u2660", "\u2665", "\u2666", "\u2663"};
@@ -13,11 +26,14 @@ public class CardDeck {
 
         for (String suit : suits)    // for each suit in the suits array
             for (String rank : ranks)
-                deck[i++] = suit + rank;
+                deck[i++] = rank + suit;
         return deck;
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(build_deck()));
+        String [] deck = build_deck();
+        System.out.println(Arrays.toString(deck));
+        //shuffle(deck);
+        System.out.println(Arrays.toString(shuffle(deck)));
     }
 }
