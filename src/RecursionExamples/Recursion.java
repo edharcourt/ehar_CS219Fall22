@@ -12,6 +12,7 @@ public class Recursion {
     }
 
     // count7s(7132771) == 3
+    // return the number of 7s in the integer n
     public static int count7s(int n) {
         if (n == 0)
             return 0;
@@ -22,6 +23,7 @@ public class Recursion {
     }
 
     // pow(2, 10) == 1024
+    // compute x to the y power recursively
     public static int pow(int x, int y) {
         if (y == 0)
             return 1;
