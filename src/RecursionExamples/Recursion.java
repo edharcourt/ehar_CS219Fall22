@@ -87,6 +87,7 @@ public class Recursion {
     }
 
 
+    // Swap items at position i and j in aos.
     public static void swap(int [] aos, int i, int j) {
         int temp = aos[i];
         aos[i] = aos[j];
@@ -97,6 +98,7 @@ public class Recursion {
     //               new int [] {4,3,2,1})
     // Do for exam study
     // i and j are the left and right bounds of the array
+    // use function swap above.
     public static void reverse(int [] a, int i, int j) {
 
     }
