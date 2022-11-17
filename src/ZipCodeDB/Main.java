@@ -1,5 +1,7 @@
 package ZipCodeDB;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         Zipcode z1 = new Zipcode("13617", "NY", "Canton",
@@ -12,5 +14,11 @@ public class Main {
 
         Database db = new Database();
 
+        System.out.println(db.findByZip("12901"));
+        System.out.println(db.findByZip("hello"));
+
+        System.out.println(db.search("43221"));
+
+        return;
     }
 }

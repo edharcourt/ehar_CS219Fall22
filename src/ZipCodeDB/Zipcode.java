@@ -3,7 +3,8 @@ package ZipCodeDB;
 /*
  *  Hold data about one zipcode
  */
-public class Zipcode {
+public class Zipcode implements Comparable<Zipcode> {
+
     private String code;
     private String state; // two character code abbreviation
     private String city;
@@ -31,4 +32,13 @@ public class Zipcode {
                 '}';
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    // The natural ordering for zipcode
+    @Override
+    public int compareTo(Zipcode zc) {
+        return this.code.compareTo(zc.code);
+    }
 }
