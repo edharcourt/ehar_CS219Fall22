@@ -96,7 +96,14 @@ public class Database {
 
     // Provides a simpler intefrace to the bsearch function
     public Zipcode search(String code) {
-        return bsearch(code, 0, codes.size() - 1);
+        // return bsearch(code, 0, codes.size() - 1);
+        int pos = Collections.binarySearch(this.codes,
+                new Zipcode(code, "","",0,0,0));
+
+        if (pos != -1)
+            return this.codes.get(pos);
+        else
+            return null;
     }
 
 
