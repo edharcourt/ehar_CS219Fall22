@@ -9,7 +9,7 @@ import java.util.Scanner;
 /*
  *  Hold data about one zipcode
  */
-public class Zipcode implements Comparable<Zipcode>, Distance {
+public class Zipcode implements Comparable<Zipcode>, Distance, WeatherInfo {
 
     private String code;
     private String state; // two character code abbreviation
@@ -60,10 +60,10 @@ public class Zipcode implements Comparable<Zipcode>, Distance {
         Scanner s = null;
 
         String path = "http://api.geonames.org/findNearByWeatherJSON?formatted=true&lat=" +
-                      this.lat + "&lng=" + this.lng + "&username=edharcourt\n";
+                      this.lat + "&lng=-" + this.lng + "&username=edharcourt\n";
 
         try {
-            url = new URL("http://10.60.15.25/~ehar/cs219/zips.txt"); // create a URL object for the path
+            url = new URL(path); // create a URL object for the path
             s = new Scanner(url.openConnection().getInputStream());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
@@ -71,9 +71,24 @@ public class Zipcode implements Comparable<Zipcode>, Distance {
             throw new RuntimeException(e);
         }
 
+        double humidity = 0, temp = 0, speed = 0;
+        String clouds = "";
+
+        while (s.hasNextLine()) {
+            String line = s.nextLine();
+            if (line.indexOf("humidity") >0 ) {
+                humidity = Double.parseDouble(
+                        line.substring(line.indexOf(':')+1,
+                                       line.indexOf(',')));
+            }
 
 
 
+        }
+
+        WeatherObservation ob =
+                new WeatherObservation(humidity, speed, temp, clouds);
+        return ob;
     }
 
 }
