@@ -69,6 +69,13 @@ public class Database {
         return null;
     }
 
+    /*
+     *   Rfeturn the zipcode info of the northern most latitude.
+     */
+    public Zipcode max_latitude() {
+        return null;
+    }
+
     public Zipcode findByZip1(String code) {
 
         for (int i = 0; i < this.codes.size(); i++) {

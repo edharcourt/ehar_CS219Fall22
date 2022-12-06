@@ -81,7 +81,7 @@ public class Zipcode implements Comparable<Zipcode>, Distance, WeatherInfo {
                         line.substring(line.indexOf(':')+1,
                                        line.indexOf(',')));
             }
-
+            // finish this for studying
 
 
         }
