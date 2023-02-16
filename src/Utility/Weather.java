@@ -58,7 +58,8 @@ public class Weather {
         double velocity = getVelocity(kbd);
 
         // what is true at this point
-        System.out.printf("The windchill for %.1f degrees at %.1f MPH is %.2f\n",
+        System.out.printf("The windchill for %.1f degrees at " +
+                          "%.1f MPH is %.2f\n",
                 temperature, velocity, windchill(temperature, velocity));
     }
 

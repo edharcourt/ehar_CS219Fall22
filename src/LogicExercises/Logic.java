@@ -1,6 +1,24 @@
 package LogicExercises;
 
 public class Logic {
+    /*
+     *   codingbat.com/java
+     *   When squirrels get together for a party, they like to have cigars.
+     *   A squirrel party is successful when the number of cigars is between
+     *   40 and 60, inclusive. Unless it is the weekend, in which case there
+     *   is no upper bound on the number of cigars. Return true if the
+     *   party with the given values is successful, or false otherwise.
+     *
+     *       cigarParty(30, false) → false
+     *       cigarParty(50, false) → true
+     *       cigarParty(70, true) → true
+     */
+
+    public static boolean cigarParty(int cigars, boolean isWeekend) {
+        return (40 <= cigars && cigars <= 60) ||
+                (isWeekend && cigars >= 40);
+    }
+
 
     public static int caughtSpeeding(int speed, boolean isBirthday) {
 
@@ -28,10 +46,6 @@ public class Logic {
         }
     } // caughtSpeeding
 
-    public static boolean cigarParty(int cigars, boolean isWeekend) {
-        return (isWeekend && cigars >= 40) ||
-                (40 <= cigars && cigars <= 60);
-    }
 
     public static void main(String [] args) {
         System.out.println(caughtSpeeding(60, false) == 0);
@@ -48,5 +62,17 @@ public class Logic {
     public static boolean isOrdered(int d1, int d2, int d3) {
         return ((d1 < d2 && d2 < d3) || (d3 < d2 && d2 < d1));
     }
+
+    /**
+     * The number 6 is a truly great number. Given two int values,
+     * a and b, return true if either one is 6. Or if their sum or
+     * difference is 6. Note: the function Math.abs(num) computes the
+     * absolute value of a number.
+     */
+    public static boolean love6(int a, int b) {
+        return (a == 6) || (b == 6) ||
+                (a + b == 6) || Math.abs(a - b) == 6;
+    }
+
 
 }
