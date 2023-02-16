@@ -1,6 +1,32 @@
 package LoopExercises;
-
 public class LoopExercises {
+
+    public static boolean isVowel(char ch) {
+        return "aeiou".indexOf(ch) > -1;
+    }
+    public static int match(String patt, String src) {
+        int count = 0;
+
+        for (int i = 0; i < src.length() - patt.length(); i++) {
+            int j = 0;
+            boolean flag = true;
+
+            while (j < patt.length() && flag) {
+                char patt_ch = patt.charAt(j);
+                char src_ch = src.charAt(i + j);
+                if (patt_ch == '0' && isVowel(src_ch) ||
+                     patt_ch == '1' && !isVowel(src_ch))
+                    j++;
+                else
+                    flag = false;
+            }
+
+            if (j == patt.length())
+                count++;
+        }
+
+        return count;
+    }
 
     /*
      * Return the sum of the digits mod 10 of an integer. This is one example of
@@ -213,6 +239,8 @@ public class LoopExercises {
      * Thoroughly test all of your functions above.
      */
     public static void main(String[] args) {
+        System.out.println(match("110", "programming") == 3);
+        System.out.println(match("010", "amazing") == 2);
         System.out.println(checksum(4298) == 3);
         System.out.println(appendChecksum(91217) == 912170);
         System.out.println(appendChecksum(91217) != 912179);  // negative test
