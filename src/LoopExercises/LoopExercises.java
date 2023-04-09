@@ -101,6 +101,17 @@ public class LoopExercises {
         return sum;
     }
 
+    public static int sum3or5(int [] nums) {
+        int sum = 0;
+        for (int v : nums) {
+            if (v % 3 == 0 || v % 5 == 0) {
+                sum = sum + v;
+            }
+        }
+        return sum;
+    }
+
+
     /*
      * Return the first factor of n greater than 1
      * and less than n. If no factors return -1.

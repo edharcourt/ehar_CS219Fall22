@@ -50,7 +50,7 @@ public class Game {
             return -1;
 
         int mid = (low + high) / 2;
-
+        System.out.printf("%5d%5d%5d\n", low, mid, high);;
         if (aos[mid].equals(target))
             return mid;
         else if (aos[mid].compareTo(target) < 0)
@@ -60,6 +60,11 @@ public class Game {
     }
 
     public static void main(String[] args) {
+
+        String [] fruit =  {"apple",  "banana",  "fig", "kiwi",  "lemon",  "lime",  "peach",
+        "pear",  "raspberry",  "strawberry"};
+        System.out.println(bsearch(fruit, "guava",0, fruit.length - 1));
+
         String [] words = load_words("http://10.60.15.25/~ehar/cs219/wordle-nyt-solutions.txt",
                                      2309);
 

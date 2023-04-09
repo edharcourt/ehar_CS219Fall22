@@ -3,6 +3,11 @@ package Crypto;
 public class Play {
 
     public static void main(String [] args) {
+        System.out.println("They\\said\\\"hurray\"");
+        System.out.println(Math.floorMod(5 - 12, 26));
+        System.out.println("apple".compareTo("banana") > 0);
+        System.out.println(77 % -9);
+        System.out.println(Math.floorMod(-77,9));
         System.out.println(3/2);                  // 1
         System.out.println(-3/2);                 // -1
         System.out.println(Math.floor(-1.25));    // -2.0
